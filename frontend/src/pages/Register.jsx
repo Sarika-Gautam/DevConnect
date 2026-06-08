@@ -1,4 +1,16 @@
+import { useState } from "react";
+
 function Register() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleRegister = () => {
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Password:", password);
+  };
+
   return (
     <div
       style={{
@@ -21,6 +33,8 @@ function Register() {
         <input
           type="text"
           placeholder="Full Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           style={{
             width: "100%",
             padding: "10px",
@@ -31,6 +45,8 @@ function Register() {
         <input
           type="email"
           placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           style={{
             width: "100%",
             padding: "10px",
@@ -41,6 +57,8 @@ function Register() {
         <input
           type="password"
           placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           style={{
             width: "100%",
             padding: "10px",
@@ -49,6 +67,7 @@ function Register() {
         />
 
         <button
+          onClick={handleRegister}
           style={{
             width: "100%",
             padding: "10px",
